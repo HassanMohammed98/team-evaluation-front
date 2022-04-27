@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AuthForm from "../MiniComponents/AuthForm";
 import { NavLink } from "react-router-dom";
 import authStore from "../../stores/authStore";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUP = () => {
   const navigate = useNavigate();
