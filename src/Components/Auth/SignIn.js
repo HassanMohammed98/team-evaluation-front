@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AuthForm from "../MiniComponents/AuthForm";
 import { NavLink } from "react-router-dom";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import authStore from "../../stores/authStore";
 
 const SignIn = () => {
@@ -45,7 +45,7 @@ const SignIn = () => {
           />
           <p className="mt-2 form-checkbox">
             Already have an Account?{" "}
-            <NavLink to="/" className="Auth-link">
+            <NavLink to="/signup" className="Auth-link">
               Sign up
             </NavLink>
           </p>

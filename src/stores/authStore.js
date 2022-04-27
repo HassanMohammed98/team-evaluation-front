@@ -1,12 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
-import { Navigate } from "react-router-dom";
-// import jwt-decode to check the token:
-// import decode from "jwt-decode";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
 
-//! make sure of the code ::
-// make auth store - sign up - sign in:
+// make auth store - sign up - sign in - setUser - signout - checkForToken:
 class AuthStore {
   // make empty obj :
   user = null;
@@ -29,8 +24,6 @@ class AuthStore {
       const res = await instance.post("/auth/users/", editUserData);
       console.log("AuthStore -> signup -> res.data.token", res.data);
       await this.signin(userData, navigate);
-      //   const test = await res.json();
-      //   await this.setUser(res.data.token);
     } catch (error) {
       console.log(error);
     }
@@ -60,17 +53,11 @@ class AuthStore {
   };
 
   setUser = async (token) => {
-    // const navigate = useNavigate();
-
     localStorage.setItem("myToken", token);
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     const res = await instance.get("/auth/users/me/");
     this.user = res.data;
     console.log(this.user);
-    // return <Navigate to="/" />;
-    // if (reg === "signin") {
-    //   navigation.navigate("Home");
-    // }
     // toast.show({
     //   description: "Signed In",
     // });
@@ -78,20 +65,14 @@ class AuthStore {
 
   // * signout method:
   signout = async (navigate) => {
-    // if (this.user === null) {
-    //   console.log("user is not signed in");
-    // } else {
     localStorage.removeItem("myToken");
     this.user = null;
     if (navigate) {
       await navigate("/signin");
     }
-    //   await AsyncStorage.removeItem("token");
-    //   navigation.navigate("Registration");
     //   toast.show({
     //     description: "Signed Out",
     //   });
-    // }
   };
 
   isTokenValid(Data) {

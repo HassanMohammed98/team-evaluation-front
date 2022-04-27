@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Modal } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { BsArrowRightShort } from "react-icons/bs";
 
 const AuthForm = ({ handleSubmit, handleChange, auth, buttonName }) => {
