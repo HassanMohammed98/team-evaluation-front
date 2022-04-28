@@ -1,5 +1,6 @@
 import React from "react";
 import semesterStore from "../../stores/semesterStore";
+import ProjectsList from "../Projects/ProjectsList";
 
 const SemesterDetail = ({ slug }) => {
   let Semester;
@@ -15,6 +16,7 @@ const SemesterDetail = ({ slug }) => {
       <h3>
         {Semester.semester} {Semester.year}
       </h3>
+      <ProjectsList Semester={Semester} />
     </div>
   );
 };
