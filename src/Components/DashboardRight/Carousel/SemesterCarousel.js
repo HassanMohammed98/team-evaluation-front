@@ -12,7 +12,6 @@ const SemesterCarousel = () => {
       </Carousel.Item>
     ))
     .reverse();
-  console.log("semester_orginal_After...", semesterStore.semesters);
   return (
     <Carousel fade className="carousel">
       {semesters}

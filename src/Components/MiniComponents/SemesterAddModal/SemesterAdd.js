@@ -58,13 +58,6 @@ const SemesterAdd = () => {
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Semester</Form.Label>
-                    {/* <Form.Control
-                onChange={handleChange}
-                name="semester"
-                type="text"
-                placeholder="Enter Semester"
-                autoFocus
-              /> */}
                     <SemesterSelect
                       semester={semester}
                       handleDropdown={handleDropdown}

@@ -1,8 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 
-//! make sure of the code ::
-// make auth store - sign up - sign in:
+// make Semester Store - fetchSemesters - addSemester:
 class SemesterStore {
   // make empty obj :
   semesters = [];
